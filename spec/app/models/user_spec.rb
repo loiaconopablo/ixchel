@@ -10,7 +10,6 @@ describe User do
 		it { should respond_to( :name ) }
 		it { should respond_to( :crypted_password) }
 		it { should respond_to( :email ) }
-		it { should respond_to( :tasks ) }
 
 	end
 
@@ -19,27 +18,37 @@ describe User do
 	  let(:user) { User.new }
 
 	  it 'should be false when name is blank' do
+	  	user.lastname = 'Doe'
 	  	user.email = 'john.doe@someplace.com'
 	  	user.password = 'a_secure_passWord!'
 	  	user.valid?.should be_false
 	  end
 
+	  it 'should be false when lastname is blank' do
+	  	user.name = 'John'
+	  	user.email = 'john.doe@someplace.com'
+	  	user.password = 'a_secure_passWord!'
+	  	user.valid?.should be_false
+	  end
 
 	  it 'should be false when email is not valid' do
-	  	user.name = 'John Doe'
+	  	user.name = 'John'
+	  	user.lastname = 'Doe'
 	  	user.email = 'john'
 	  	user.password = 'a_secure_passWord!'
 	  	user.valid?.should be_false
 	  end
 
 	  it 'should be false when password is blank' do
-	  	user.name = 'John Doe'
+	  	user.name = 'John'
+	  	user.lastname = 'Doe'
 	  	user.email = 'john.doe@someplace.com'
 	  	user.valid?.should be_false
 	  end
 
 	  it 'should be true when all field are valid' do
-	  	user.name = 'John Doe'
+	  	user.name = 'John'
+	  	user.lastname = 'Doe'
 	  	user.email = 'john.doe@someplace.com'
 	  	user.password = 'a_secure_passWord!'
 	  	user.valid?.should be_true

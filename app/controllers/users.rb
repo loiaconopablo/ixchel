@@ -35,15 +35,15 @@ TaskManagement::App.controllers :users do
       if (params[:user][:password] == password_confirmation)
         @user = User.new(params[:user])
         if @user.save
-          flash[:success] = 'User created'
+          flash[:success] = 'Alumno registrado'
           redirect '/'
         else
-          flash.now[:error] = 'All fields are mandatory'
+          flash.now[:error] = 'Todos los campos son obligatorios'
           render 'users/new'
         end
       else
         @user = User.new (params[:user])
-        flash.now[:error] = 'Passwords do not match'
+        flash.now[:error] = 'Las contrasenas no coinciden'
         render 'users/new'          
       end
   end
@@ -51,9 +51,9 @@ TaskManagement::App.controllers :users do
    delete :destroy do
      @user = User.get(params[:user_id])
      if @user.destroy
-       flash[:success] = 'Student Deleted'
+       flash[:success] = 'Alumno eliminado'
      else
-       flash.now[:error] = 'Error Deleting a Student'
+       flash.now[:error] = 'Error elliminando alumno'
      end
      redirect '/'
    end  
@@ -65,7 +65,7 @@ TaskManagement::App.controllers :users do
           i.destroy
         end
      end
-     flash[:success] = 'All Students were deleted'
+     flash[:success] = 'Todos los alumnos fueron eliminados'
      redirect '/'
    end   
 

@@ -23,5 +23,5 @@ RSpec.configure do |conf|
 end
 
 def app
-  ManagementTask::App.tap { |app|  }
+  TaskManagement::App.tap { |app|  }
 end

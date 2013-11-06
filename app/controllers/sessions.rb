@@ -11,7 +11,7 @@ TaskManagement::App.controllers :sessions do
     @user = User.authenticate(email, password)
     if (@user.nil?)
       @user = User.new
-      flash.now[:error] = 'Invalid user'
+      flash.now[:error] = 'Usuario invalido'
       render 'sessions/new'
     else
       sign_in @user
