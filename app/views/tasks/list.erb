@@ -1,0 +1,28 @@
+<h1>Current Tasks</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>Title</th>
+		<th>Location</th>
+		<th>Description</th>
+		<th>Actions</th>
+	</tr>
+	<% @tasks.each do | task| %>
+
+	<tr>
+		<td>
+			<%= task.title %>
+		</td>
+		<td>
+			<%= task.location %>
+		</td>
+		<td>
+			<%= task.description %>
+		</td>		
+		<td>
+			<%= link_to 'Apply', url_for(:tasks, :apply, :task_id => task.id), :class => "btn btn-primary" %>
+		</td>		
+	</tr>
+
+  <% end %>
+
+</table>

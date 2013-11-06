@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+    <meta charset="utf-8">
+		<title>Management Tasks EIS</title>
+		<%= stylesheet_link_tag '/assets/application.css' %>
+	</head>
+	<body>
+		<div class="container">
+      <div class="masthead">
+      	<div class="container">
+      	<div class="app-title">
+      	<h1>Ingenieria de Software UNQ</h1>
+      	</div>
+      	<div class="profile"> 
+						<% if signed_in? %>
+							<%= current_user.email %>
+						<% end %>
+				</div>
+				</div>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><%= link_to 'Home', url_for(:home, :index) %></li>
+                <li><%= link_to 'Students', url_for(:users, :latest) %></li>
+								<% if signed_in? %>	
+                  <%if current_user.is_teacher%>
+                    <li><%= link_to 'Register student', url_for(:users, :new) %></li>
+                  <% end %>
+  								<li><%= link_to 'Logout', url_for(:sessions, :destroy) %></li>
+  								<% else%>	
+  								<li><%= link_to 'Login', url_for(:sessions, :login) %></li>
+								<% end %>
+
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+      </div>
+
+      <div class="container">
+			  <div>
+			    <%= [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe %>
+			  </div>
+
+      	<%= yield %>
+
+      </div>
+      <!-- footer -->
+      <div class="footer">
+      	<hr/>
+        <p>Saira Ponce<br>Leandro Rinaudo</p>
+      </div>
+
+    </div> 
+
+		<%= javascript_include_tag '/assets/application' %> 
+		</body>
+</html>

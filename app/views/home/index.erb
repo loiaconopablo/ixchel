@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>Task Management</h1>
+  <p class="lead">Welcome to the website task management from Elementos de la Ingenieria de Software, if you want to see the registered students, push  <a href="<%= url(:users, :latest) %>">List of students</a>. To register a new student you should sign in as teacher</p>
+  <a class="btn btn-large btn-success" href="<%= url(:users, :latest) %>" >List of students</a>
+  <% if signed_in? %>
+	  <% if current_user.is_teacher %>
+	  	<a class="btn btn-large btn-success" href="<%= url(:users, :new) %>">Register student</a>
+	  <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="25" failures="8" errors="0" time="2.523010" timestamp="2013-11-05T10:31:56+01:00">
+  <properties/>
+  <testcase classname="spec.app.controllers.home_controller_spec" name="HomeController default should return Comming soon!" time="0.001992">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/home_controller_spec.rb:8:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should response ok" time="0.024798">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/sessions_controller_spec.rb:8:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should render users/login" time="0.001304">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/sessions_controller_spec.rb:14:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.controllers.tasks_controller_spec" name="TasksController get :new should response ok and render tasks/new" time="0.001222">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/tasks_controller_spec.rb:8:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should response ok" time="0.017204">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/users_controller_spec.rb:8:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should render users/new" time="0.001226">
+    <failure message="uninitialized constant ManagementTask" type="NameError">
+      <![CDATA[uninitialized constant ManagementTask
+./spec/app/controllers/users_controller_spec.rb:14:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #id" time="0.039369"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #title" time="0.001015"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #location" time="0.000289"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #description" time="0.000243"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #owner" time="0.000248"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #owner=" time="0.000206"/>
+  <testcase classname="spec.app.models.task_spec" name="Task valid? should be false when title is blank" time="0.194237"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #id" time="0.000287"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #name" time="0.000232"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #crypted_password" time="0.000284"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #email" time="0.000454"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #tasks" time="0.006433">
+    <failure message="expected #&lt;User @id=nil @name=nil @lastname=nil @crypted_password=nil @email=nil @is_teacher=nil&gt; to respond to :tasks" type="RSpec::Expectations::ExpectationNotMetError">
+      <![CDATA[expected #<User @id=nil @name=nil @lastname=nil @crypted_password=nil @email=nil @is_teacher=nil> to respond to :tasks
+./spec/app/models/user_spec.rb:13:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when name is blank" time="0.261439"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when email is not valid" time="0.324002"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when password is blank" time="0.001234"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be true when all field are valid" time="0.270198">
+    <failure message="expected: true value&#10;     got: false" type="RSpec::Expectations::ExpectationNotMetError">
+      <![CDATA[expected: true value
+     got: false
+./spec/app/models/user_spec.rb:45:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when password do not match" time="0.547178"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when email do not match" time="0.254662"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return the user when email and password match" time="0.562741"/>
+</testsuite>

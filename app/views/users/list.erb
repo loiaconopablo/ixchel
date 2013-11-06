@@ -1,0 +1,48 @@
+<h1>List of students</h1>
+<table class="table table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Lastname</th>
+		<th>Email</th>
+		<% if signed_in? %>
+			<th>Acciones</th>
+		<% end %>
+
+		<!--<th>Description</th>-->
+		<!--<th>Actions</th>-->
+	</tr>
+	<% @users.each do | user| %>
+		<% if not user.is_teacher %>
+			<tr>
+				<td>
+					<%= user.name %>
+				</td>
+				<td>
+					<%= user.lastname %>
+				</td>
+				<td>
+					<%= user.email%>
+				</td>
+				<td>
+					<% if signed_in? %>
+						<% if current_user.id == user.id || current_user.is_teacher %>
+							<%- form_tag url(:users, :destroy, :user_id => user.id), :method => :delete do %>
+                				<button type='submit' title="Delete Student" rel='tooltip' class="btn btn-secondary" >Delete</button>
+                			<% end %>
+						<% end %>
+					<% end %>
+				</td>
+			</tr>
+
+		<% end %>
+  <% end %>
+
+</table>
+
+<% if signed_in? %>
+	<% if current_user.is_teacher %>
+		<%- form_tag url(:users, :destroyAll), :method => :delete do %>
+			<button type='submit' title="Delete All Students" rel='tooltip' class="btn btn-primary" >Delete All</button>
+		<% end %>
+	<% end %>
+<% end %>
