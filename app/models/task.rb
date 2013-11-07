@@ -6,7 +6,7 @@ class Task
   property :title, String
   property :estimated_time, Integer
   property :real_time, Integer
-  property :limit_time, Date
+  property :limit_date, Date
 
   def set_title(t)
     self.titulo = t

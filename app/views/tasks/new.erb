@@ -1,8 +1,10 @@
-<h1>New Tassk</h1>
-<% form_for(@task, '/tasks/create') do |f| %>
+<h1>Crear Tarea</h1>
+<% form_for(@task, '/tasks/create') do |f| %> 
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :limit_date %>
+  <%= f.text_field :limit_date %>
 
-  <%= partial 'tasks/form', :locals => { :f => f } %>
-
-  <%= f.submit "Create", :class => "btn btn-primary" %>
-  <%= link_to 'Cancel', url_for(:tasks, :my), :class => "btn btn-secondary" %>
+  <br/>
+  <%= f.submit "Crear", :class => "btn btn-primary" %>
 <% end %>
