@@ -20,8 +20,8 @@ class Task
     self.real_time = t
   end
 
-  def set_limit_date(d)
-    self.limit_date = d
+  def set_limit_date(str)
+    self.limit_date = Date.parse(str)
   end
 
 end

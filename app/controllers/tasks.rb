@@ -8,10 +8,14 @@ TaskManagement::App.controllers :tasks do
 
   post :create do
     @task = Task.new(params[:task])
-    redirect '/' 
-    # @users = User.all
-    # @users.each do |i|
-    #   i.task.add(@task)  
+    @users = User.all
+     @users.each do |i|
+        @user_task = User_Task.new
+        @user_task.id_user = i.id
+        @user_task.id_task = @task.id
+        @user_task.save
+     end    
+    redirect '/'   
   end
 
 end
