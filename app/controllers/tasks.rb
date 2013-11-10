@@ -6,9 +6,15 @@ TaskManagement::App.controllers :tasks do
     render 'tasks/new'
   end
 
+  get :latest do
+    @tasks = Task.all
+    render 'tasks/list'
+  end 
+
   post :create do
     @task = Task.new(params[:task])
     @users = User.all
+    @task.save
      @users.each do |i|
         @user_task = User_Task.new
         @user_task.id_user = i.id
