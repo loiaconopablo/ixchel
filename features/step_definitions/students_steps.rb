@@ -52,3 +52,7 @@ end
 Then(/^I should see all of the students registered in the course$/) do
   page.should have_content('Name')
 end
+
+When(/^I push the button "(.*?)"$/) do |arg1|
+  click_button(arg1)
+end
