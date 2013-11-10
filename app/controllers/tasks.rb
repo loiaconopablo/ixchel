@@ -6,9 +6,27 @@ TaskManagement::App.controllers :tasks do
     render 'tasks/new'
   end
 
+  get :latest do
+    @tasks = Task.all
+    render 'tasks/list'
+  end 
+
+  #     if @task.save
+#       flash[:success] = 'Task created'
+#       redirect '/tasks/my'
+#     else
+#       flash.now[:error] = 'Title is mandatory'
+#       render 'tasks/new'
+#     end  
+
   post :create do
     @task = Task.new(params[:task])
     @users = User.all
+    if @task.save
+      flash[:success] = 'Tarea Creada Correctamente'
+    else
+      flash.now[:error] = 'Se produjo un error al crear la tarea'
+    end
      @users.each do |i|
         @user_task = User_Task.new
         @user_task.id_user = i.id

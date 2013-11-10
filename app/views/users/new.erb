@@ -1,14 +1,20 @@
 <h1>Registrar alumno</h1>
-<% form_for(@user, '/users/create') do |f| %> 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :lastname %>
-	<%= f.text_field :lastname %>
-	<%= f.label :email %>
- 	<%= f.text_field :email %>
+<% form_for(@user, '/users/create') do |f| %>
+        Nombre:
+  <br>
+        <%= f.text_field :name %>
+  <br>
+        Apellido:
+  <br>
+        <%= f.text_field :lastname %>
+  <br>
+        <%= f.label :email %>
+         <%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
+  <br>
+  Confirmar Password:
+  <br>
   <%= f.password_field :password_confirmation %>
   <br/>
   <%= f.submit "Registrar", :class => "btn btn-primary" %>
