@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite tests="17" failures="0" errors="0" time="4.322987" timestamp="2013-11-10T20:07:22+01:00">
+<testsuite tests="27" failures="2" errors="0" time="3.025471" timestamp="2013-11-10T20:49:04+01:00">
   <properties/>
-  <testcase classname="spec.app.controllers.home_controller_spec" name="HomeController default should return Comming soon!" time="2.199699"/>
-  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should response ok" time="0.190574"/>
-  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should render users/login" time="0.003533"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should response ok" time="0.007078"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should render users/new" time="0.008203"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #id" time="0.011477"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #name" time="0.000333"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #crypted_password" time="0.000217"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #email" time="0.000509"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when name is blank" time="0.307958"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when lastname is blank" time="0.262542"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when email is not valid" time="0.168569"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when password is blank" time="0.001969"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be true when all field are valid" time="0.107030"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when password do not match" time="0.222506"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when email do not match" time="0.138016"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return the user when email and password match" time="0.670276"/>
+  <testcase classname="spec.app.controllers.home_controller_spec" name="HomeController default should return Comming soon!" time="1.590695"/>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should response ok" time="0.141536"/>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should render users/login" time="0.015315"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should response ok" time="0.014513"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should render users/new" time="0.003522"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #id" time="0.006798"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #title" time="0.000324"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #estimated_time" time="0.000381"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #real_time" time="0.000351"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #limit_date" time="0.001199"/>
+  <testcase classname="spec.app.models.task_spec" name="Task set_title set a title to the task" time="0.000623">
+    <failure message="undefined method `task' for #&lt;Task:0x92f9f64&gt;" type="NoMethodError">
+      <![CDATA[undefined method `task' for #<Task:0x92f9f64>
+./spec/app/models/task_spec.rb:22:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return Tarea 1" time="0.007336"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return estimated time = 30" time="0.000603"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return real_time = 35" time="0.000623"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return limit date = 2011-12-13" time="0.006496">
+    <failure message="&#10;expected: &quot;2011-12-13&quot;&#10;     got: #&lt;Date: 2011-12-13 ((2455909j,0s,0n),+0s,2299161j)&gt;&#10;&#10;(compared using ==)&#10;&#10;Diff:&#10;�[34m@@ -1,2 +1,2 @@&#10;�[0m�[31m-&quot;2011-12-13&quot;&#10;�[0m�[32m+#&lt;Date: 2011-12-13 ((2455909j,0s,0n),+0s,2299161j)&gt;&#10;�[0m" type="RSpec::Expectations::ExpectationNotMetError">
+      <![CDATA[
+expected: "2011-12-13"
+     got: #<Date: 2011-12-13 ((2455909j,0s,0n),+0s,2299161j)>
+
+(compared using ==)
+
+Diff:
+[34m@@ -1,2 +1,2 @@
+[0m[31m-"2011-12-13"
+[0m[32m+#<Date: 2011-12-13 ((2455909j,0s,0n),+0s,2299161j)>
+[0m
+./spec/app/models/task_spec.rb:50:in `block (3 levels) in <top (required)>']]>
+    </failure>
+  </testcase>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #id" time="0.000496"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #name" time="0.000282"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #crypted_password" time="0.000216"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #email" time="0.000219"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when name is blank" time="0.110366"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when lastname is blank" time="0.109260"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when email is not valid" time="0.110507"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when password is blank" time="0.001100"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be true when all field are valid" time="0.110594"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when password do not match" time="0.321760"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when email do not match" time="0.228152"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return the user when email and password match" time="0.231136"/>
 </testsuite>
