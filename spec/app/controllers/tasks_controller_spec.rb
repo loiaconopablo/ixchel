@@ -2,19 +2,22 @@ require 'spec_helper'
 
 describe "TasksController" do
 
-	describe 'get :register' do
+	describe 'get :new' do
 		
 	  it "should response ok" do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('users/new')
-	  	get '/register'
+	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/new')
+	  	get '/tasks/new'
 	    last_response.should be_ok
 	  end
+	end
 
-	  it 'should render users/new' do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('users/new')
-	  	get '/register'
+	describe 'get :latest' do
+		
+	  it "should response ok" do
+	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/list')
+	  	get '/tasks/latest'
+	    last_response.should be_ok
 	  end
-
-	 end
+	end
 	 
 end
