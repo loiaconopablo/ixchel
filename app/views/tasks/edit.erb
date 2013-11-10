@@ -1,8 +1,8 @@
-<h1>Edit Task</h1>
+<h1>Editar Tarea</h1>
 <% form_for(@task, "/tasks/update/#{@task.id}") do |f| %>
 
   <%= partial 'tasks/form', :locals => { :f => f } %>
 
-  <%= f.submit "Save", :class => "btn btn-primary" %>
-  <%= link_to 'Cancel', url_for(:tasks, :my), :class => "btn btn-secondary" %>
+  <%= f.submit "Guardadr", :class => "btn btn-primary" %>
+  <%= link_to 'Cancelar', url_for(:tasks, :my), :class => "btn btn-secondary" %>
 <% end %>

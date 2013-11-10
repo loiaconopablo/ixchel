@@ -18,6 +18,21 @@ TaskManagement::App.controllers :tasks do
     redirect '/'   
   end
 
+  get :index do
+     @tasks = Task.all
+     render 'tasks/search'
+   end  
+
+   get :new do
+     @task = Task.new
+     render 'tasks/new'
+   end
+
+   get :latest do
+     @tasks = Task.all
+     render 'tasks/list'
+   end
+
 end
 #   get :my do
 #     @tasks = Task.find_by_owner(current_user)

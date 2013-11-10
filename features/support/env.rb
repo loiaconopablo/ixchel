@@ -22,4 +22,5 @@ end
 # You can handle all padrino applications using instead:
 #   Padrino.application
 #Capybara.default_driver = :selenium
+DataMapper.auto_migrate!
 Capybara.app = TaskManagement::App.tap { |app|  }
