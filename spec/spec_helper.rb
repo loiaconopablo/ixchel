@@ -16,11 +16,21 @@ end
 
 require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 
+#RSpec.configure do |conf|
+#  conf.include Rack::Test::Methods
+#  DataMapper.setup(:default, "abstract::")
+#  DataMapper::Logger.new($stdout, :all)
+#end
+
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods
-  DataMapper.auto_migrate!
-  DataMapper.setup(:default, "abstract::")
   DataMapper::Logger.new($stdout, :all)
+  DataMapper.auto_migrate!
+  user = User.create(:email => 'npaez@gmail.com',
+                   :name => 'Nicolas', 
+                   :lastname => 'Paez',
+                   :is_teacher => true,
+                   :password => "1234")
 end
 
 def app

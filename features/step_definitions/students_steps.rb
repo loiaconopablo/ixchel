@@ -6,6 +6,8 @@ Given(/^I am signed in as teacher$/) do
 end
 
 Given(/^I am in page Register student$/) do
+  visit '/users/latest'
+  click_button('Delete all')
   visit '/register'
 end
 
@@ -29,11 +31,7 @@ When(/^I fill the field confirm_password with "(.*?)"$/) do |arg1|
   fill_in('user[password_confirmation]', :with => arg1)
 end
 
-Given(/^I am in page List of students$/) do
-  visit '/users/latest'
-end
-
-Given(/^I push the button Eliminar todos$/) do
+When(/^I push the button Eliminar todos$/) do
   click_button('Delete all')
 end
 
@@ -41,16 +39,17 @@ Given(/^I am in page list of students$/) do
   visit '/users/latest'
 end
 
-Given(/^I push the button Eliminar$/) do
+When(/^I push the button Eliminar$/) do
   click_button('Delete')
 end
+
 
 When(/^push the button Lista de alumnos$/) do
   visit '/users/latest'
 end
 
 Then(/^I should see all of the students registered in the course$/) do
-  page.should have_content('Name')
+  page.should have_content('Nombre')
 end
 
 When(/^I push the button "(.*?)"$/) do |arg1|

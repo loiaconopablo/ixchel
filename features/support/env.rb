@@ -18,9 +18,17 @@ SimpleCov.start do
   add_group "Helpers", "app/helpers"
 end
 
+DataMapper::Logger.new($stdout, :all)
+DataMapper.auto_migrate!                 
+user = User.create(:email => 'npaez@gmail.com',
+                   :name => 'Nicolas', 
+                   :lastname => 'Paez',
+                   :is_teacher => true,
+                   :password => "1234")
+
 ##
 # You can handle all padrino applications using instead:
 #   Padrino.application
 #Capybara.default_driver = :selenium
-DataMapper.auto_migrate!
+
 Capybara.app = TaskManagement::App.tap { |app|  }

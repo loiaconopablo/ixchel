@@ -3,7 +3,7 @@ Feature: Login
 	As a Student
 	I want input email and password
 
-Background
+Background:
 	Given I am signed in as teacher
 	And I am in page Register student
 	When I fill the field name with "Maria"
