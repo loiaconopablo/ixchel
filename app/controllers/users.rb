@@ -67,6 +67,12 @@ TaskManagement::App.controllers :users do
      end
      flash[:success] = 'Todos los alumnos fueron eliminados'
      redirect '/'
-   end   
+   end
+
+  get :tasks do
+    @user = User.get(params[:user_id])
+    @tasks = Task.all
+    render 'users/task_list'
+  end  
 
 end

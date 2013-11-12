@@ -1,39 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
-        <head>
+	<head>
     <meta charset="utf-8">
-                <title>Universidad Nacional de Quilmes</title>
-                <%= stylesheet_link_tag '/assets/application.css' %>
-        </head>
-        <body>
-                <div class="container">
+		<title>Universidad Nacional de Quilmes</title>
+		<%= stylesheet_link_tag '/assets/application.css' %>
+	</head>
+	<body>
+		<div class="container">
       <div class="masthead">
-              <div class="container">
-              <div class="app-title">
-              <h1>Elementos de la Ingenieria de Software</h1>
-              </div>
-              <div class="profile">
-                                                <% if signed_in? %>
-                                                        <%= current_user.email %>
-                                                <% end %>
-                                </div>
-                                </div>
+      	<div class="container">
+      	<div class="app-title">
+      	<h1>Elementos de la Ingenieria de Software</h1>
+      	</div>
+      	<div class="profile"> 
+						<% if signed_in? %>
+							<%= current_user.email %>
+						<% end %>
+				</div>
+				</div>
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
                 <li><%= link_to 'Inicio', url_for(:home, :index) %></li>
                 <li><%= link_to 'Alumnos', url_for(:users, :latest) %></li>
-                                                                <% if signed_in? %>        
+								<% if signed_in? %>	
                   <%if current_user.is_teacher%>
                     <li><%= link_to 'Registrar alumno', url_for(:users, :new) %></li>
                     <li><%= link_to 'Crear Tarea', url_for(:tasks, :new) %></li>
                     <li><%= link_to 'Listar Tareas', url_for(:tasks, :latest) %></li>
                   <% end %>
-                                                                  <li><%= link_to 'Cerrar sesion', url_for(:sessions, :destroy) %></li>
-                                                                  <% else%>        
-                                                                  <li><%= link_to 'Iniciar sesion', url_for(:sessions, :login) %></li>
-                                                                <% end %>
+  								<li><%= link_to 'Cerrar sesion', url_for(:sessions, :destroy) %></li>
+  								<% else%>	
+  								<li><%= link_to 'Iniciar sesion', url_for(:sessions, :login) %></li>
+								<% end %>
               </ul>
             </div>
           </div>
@@ -41,21 +42,21 @@
       </div>
 
       <div class="container">
-                         <div>
-                         <%= [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe %>
-                         </div>
+			  <div>
+			    <%= [:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe %>
+			  </div>
 
-              <%= yield %>
+      	<%= yield %>
 
       </div>
       <!-- footer -->
       <div class="footer">
-              <hr/>
+      	<hr/>
         <p>Saira Ponce<br>Leandro Rinaudo</p>
       </div>
 
-    </div>
+    </div> 
 
-                <%= javascript_include_tag '/assets/application' %>
-                </body>
+		<%= javascript_include_tag '/assets/application' %> 
+		</body>
 </html>

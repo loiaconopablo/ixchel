@@ -1,41 +1,46 @@
 <h1>Lista de alumnos</h1>
 <table class="table table-bordered">
-        <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <% if signed_in? %>
-                        <th>Acciones</th>
-                <% end %>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <% if signed_in? %>
+                <th>Acciones</th>
+        <% end %>
 
-                <!--<th>Description</th>-->
-                <!--<th>Actions</th>-->
-        </tr>
-        <% @users.each do | user| %>
-                <% if not user.is_teacher %>
-                        <tr>
-                                <td>
-                                        <%= user.name %>
-                                </td>
-                                <td>
-                                        <%= user.lastname %>
-                                </td>
-                                <td>
-                                        <%= user.email%>
-                                </td>
-                                <td>
-                                        <% if signed_in? %>
-                                                <% if current_user.id == user.id || current_user.is_teacher %>
-                                                        <%- form_tag url(:users, :destroy, :user_id => user.id), :method => :delete do %>
-                                                <button type='submit' title="Delete" rel='tooltip' class="btn btn-secondary" >Eliminar</button>
-                                        <% end %>
-                                                <% end %>
-                                        <% end %>
-                                </td>
-                        </tr>
+        <!--<th>Description</th>-->
+        <!--<th>Actions</th>-->
+    </tr>
+    <% @users.each do | user| %>
+        <% if not user.is_teacher %>
+            <tr>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.lastname %>
+                </td>
+                <td>
+                    <%= user.email%>
+                </td>
+                <td>
+                    <% if signed_in? %>
+                        <% if current_user.id == user.id || current_user.is_teacher %>
+                            <%- form_tag url(:users, :tasks, :user_id => user.id), :method => :get do %>
+                                <!--
+                                <button type='submit' title="Tareas" rel='tooltip' class="btn btn-primary" >Ver Tareas</button>
+                                    -->
+                            <% end %>
+                            <%- form_tag url(:users, :destroy, :user_id => user.id), :method => :delete do %>
+                                <button type='submit' title="Delete" rel='tooltip' class="btn btn-secondary" >Eliminar</button>
+                            <% end %>
+                    <% end %>
+        <% end %>
+                </td>
+            </tr>
 
-                <% end %>
-  <% end %>
+        <% end %>
+    <% end %>
 
 </table>
 

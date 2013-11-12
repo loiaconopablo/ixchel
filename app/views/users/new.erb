@@ -1,15 +1,15 @@
 <h1>Registrar alumno</h1>
-<% form_for(@user, '/users/create') do |f| %>
-        Nombre:
+<% form_for(@user, '/users/create') do |f| %> 
+	Nombre:
   <br>
-        <%= f.text_field :name %>
+	<%= f.text_field :name %>
   <br>
-        Apellido:
+	Apellido:
   <br>
-        <%= f.text_field :lastname %>
+	<%= f.text_field :lastname %>
   <br>
-        <%= f.label :email %>
-         <%= f.text_field :email %>
+	<%= f.label :email %>
+ 	<%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br>

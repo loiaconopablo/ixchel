@@ -86,5 +86,13 @@ describe User do
 
 	end
 
+	describe 'is_teacher?' do 
+		it 'should return false' do
+			@user = User.new
+			@user.set_is_student
+			@user.is_teacher.should be false
+		end
+	end
+
 end
 

@@ -1,0 +1,31 @@
+<h1>Lista de Tareas</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Titulo</th>
+        <th>Fecha Limite</th>
+        <th>ID</th>
+        <th>Acciones</th>
+    </tr>
+    <% @tasks.each do | task | %>
+        <tr>
+            <td>
+                <%= task.title %>
+            </td>
+            <td>
+                <%= task.limit_date%>
+            </td>
+            <td>
+                <%= task.id%>
+            </td>
+            <td>
+                <%- form_tag url(:tasks, :user_tasks, :task_id => task.id), :method => :put do %>
+                     
+                    <button type='submit' title="Tareas" rel='tooltip' class="btn btn-primary" >Estimar</button>
+                
+                <% end %>
+            </td>
+        
+        </tr>
+    <% end %>
+
+</table>
