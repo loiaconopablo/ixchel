@@ -3,16 +3,23 @@
     <tr>
         <th>Titulo</th>
         <th>Fecha Limite</th>
+        <th>Tiempo Estimado</th>
+        <th>Tiempo Real</th>
     </tr>
-    <% @tasks.each do | task | %>
+    <% @user_tasks.each do | user_task | %>
         <tr>
             <td>
-                <%= task.title %>
+                <%= user_task.title %>
             </td>
             <td>
-                <%= task.limit_date%>
+                <%= user_task.limit_date%>
             </td>
             <td>
+                <%= user_task.estimated_time%>
+            </td>
+            <td>
+                <%= user_task.real_time%>
+            </td>
         
         </tr>
     <% end %>
