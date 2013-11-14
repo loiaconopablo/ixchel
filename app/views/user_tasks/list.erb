@@ -3,7 +3,6 @@
     <tr>
         <th>Titulo</th>
         <th>Fecha Limite</th>
-        <th>Acciones</th>
     </tr>
     <% @tasks.each do | task | %>
         <tr>
@@ -14,10 +13,7 @@
                 <%= task.limit_date%>
             </td>
             <td>
-                <%- form_tag url(:user_tasks, :create, :user_id => current_user.id, :task_id => task.id, :task_title => task.title, :task_date => task.limit_date), :method => :post do %>
-                    <button type='submit' title="Estimar" rel='tooltip' class="btn btn-primary" >Estimar Tarea</button>
-                <% end %>
-            </td>
+        
         </tr>
     <% end %>
 
