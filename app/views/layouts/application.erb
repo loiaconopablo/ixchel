@@ -29,8 +29,9 @@
                   <%if current_user.is_teacher%>
                     <li><%= link_to 'Registrar alumno', url_for(:users, :new) %></li>
                     <li><%= link_to 'Crear Tarea', url_for(:tasks, :new) %></li>
-                    <li><%= link_to 'Listar Tareas', url_for(:tasks, :latest) %></li>
+                    
                   <% end %>
+                  <li><%= link_to 'Listar Tareas', url_for(:tasks, :latest) %></li>
                   <li><%= link_to 'User_Tasks', url_for(:user_tasks, :latest) %></li>
   								<li><%= link_to 'Cerrar sesion', url_for(:sessions, :destroy) %></li>
   								<% else%>	

@@ -7,7 +7,13 @@ TaskManagement::App.controllers :user_tasks do
   end
 
   get :latest do
-    @user_tasks = User_Task.all
+    @user_tasks_temp = User_Task.all
+    @user_tasks = []
+    @user_tasks_temp.each do |i|
+      if(i.id_user == current_user.id)
+        @user_tasks.push(i)
+      end
+    end
     render 'user_tasks/list'
   end 
 
@@ -24,14 +30,14 @@ TaskManagement::App.controllers :user_tasks do
   post :update, :with => :id_user_task do
     @user_task = User_Task.get(params[:id_user_task])
     @user_task.update(params[:user_task])
-    @user_task.save
+    if @user_task.save
+      flash[:success] = 'Tarea guardada correctamente'
+    else
+      flash.now[:error] = 'Error al estimar la tarea'
+    end
     redirect '/'
   end  
 
-  # put :user_tasks do
-  #   @task = Task.get(params[:task_id])
-  #   render 'tasks/estimate'
-  # end   
 
 end
 #   get :my do
