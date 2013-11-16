@@ -1,6 +1,7 @@
 <h1>Lista de Tareas</h1>
 <table class="table table-bordered">
     <tr>
+        <th>ID</th>
         <th>Titulo</th>
         <th>Fecha Limite</th>
         <th>Acciones</th>
@@ -8,14 +9,24 @@
     <% @tasks.each do | task | %>
         <tr>
             <td>
+                <%= task.id %>
+            </td>
+            <td>
                 <%= task.title %>
             </td>
             <td>
                 <%= task.limit_date%>
             </td>
             <td>
-                <%- form_tag url(:user_tasks, :create, :user_id => current_user.id, :task_id => task.id, :task_title => task.title, :task_date => task.limit_date), :method => :post do %>
-                    <button type='submit' title="Estimar" rel='tooltip' class="btn btn-primary" >Estimar Tarea</button>
+                <%if current_user.is_teacher%>
+                    <%- form_tag url(:user_tasks, :done, :task_id => task.id), :method => :post do %>
+                            <button type='submit' title="Alumnos" rel='tooltip' class="btn btn-primary" >Ver quien cumplio</button>
+                    <% end %>
+                <% else%>
+                    <%- form_tag url(:user_tasks, :create, :user_id => current_user.id, :task_id => task.id, :task_title => task.title, :task_date => task.limit_date), :method => :post do %>
+                            <button type='submit' title="Estimar" rel='tooltip' class="btn btn-primary" >Estimar Tarea</button>
+                    <% end %>
+                
                 <% end %>
             </td>
         </tr>

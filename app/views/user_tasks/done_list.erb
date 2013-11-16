@@ -1,0 +1,27 @@
+<h1>Alumnos que cumplieron</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+    </tr>
+    <% @users_accomplish.each do | user | %>
+        <tr>
+            <td>
+                <%= user.id %>
+            </td>
+            <td>
+                <%= user.name %>
+            </td>
+            <td>
+                <%= user.lastname%>
+            </td>
+            <td>
+                <%= user.email%>
+            </td>
+        
+        </tr>
+    <% end %>
+
+</table>

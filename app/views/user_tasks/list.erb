@@ -1,6 +1,7 @@
 <h1>Lista de Tareas</h1>
 <table class="table table-bordered">
     <tr>
+        <th>ID Tarea</th>
         <th>Titulo</th>
         <th>Fecha Limite</th>
         <th>Tiempo Estimado</th>
@@ -8,6 +9,9 @@
     </tr>
     <% @user_tasks.each do | user_task | %>
         <tr>
+            <td>
+                <%= user_task.id_task %>
+            </td>
             <td>
                 <%= user_task.title %>
             </td>

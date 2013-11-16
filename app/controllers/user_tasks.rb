@@ -17,6 +17,22 @@ TaskManagement::App.controllers :user_tasks do
     render 'user_tasks/list'
   end 
 
+  post :done do
+    @user_tasks = User_Task.all
+    @users_temp = User.all
+    @users_accomplish = []
+    @user_tasks.each do |ut|
+      if(ut.id_task.to_s() == (params[:task_id]))
+        @users_temp.each do |us|
+          if(ut.id_user == us.id)
+            @users_accomplish.push(us)
+          end
+        end
+      end
+    end
+    render 'user_tasks/done_list'
+  end   
+
   post :create do
     @user_task = User_Task.new
     @user_task.id_task = (params[:task_id])
