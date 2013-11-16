@@ -19,8 +19,9 @@ TaskManagement::App.controllers :user_tasks do
 
   post :done do
     @user_tasks = User_Task.all
-    @users_temp = User.all
+    @users_temp = User.find_all{|x| not x.is_teacher}
     @users_accomplish = []
+    @users_not_accomplish = []
     @user_tasks.each do |ut|
       if(ut.id_task.to_s() == (params[:task_id]))
         @users_temp.each do |us|
@@ -30,6 +31,7 @@ TaskManagement::App.controllers :user_tasks do
         end
       end
     end
+    @users_not_accomplish = @users_temp - @users_accomplish
     render 'user_tasks/done_list'
   end   
 

@@ -25,3 +25,31 @@
     <% end %>
 
 </table>
+
+<h1>Alumnos que NO cumplieron</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+    </tr>
+    <% @users_not_accomplish.each do | badusers | %>
+        <tr>
+            <td>
+                <%= badusers.id %>
+            </td>
+            <td>
+                <%= badusers.name %>
+            </td>
+            <td>
+                <%= badusers.lastname%>
+            </td>
+            <td>
+                <%= badusers.email%>
+            </td>
+        
+        </tr>
+    <% end %>
+
+</table>
