@@ -36,13 +36,19 @@ TaskManagement::App.controllers :user_tasks do
   end   
 
   post :create do
-    @user_task = User_Task.new
-    @user_task.id_task = (params[:task_id])
-    @user_task.id_user = (params[:user_id])
-    @user_task.title = (params[:task_title])
-    @user_task.limit_date = (params[:task_date])
-    @user_task.save
-    render 'user_tasks/new'   
+    @user_task_tmp = User_Task.find_all{|x| (x.id_user.to_s() == params[:user_id]) && (x.id_task.to_s() == params[:task_id])}
+    if (@user_task_tmp[0] == nil)
+      @user_task = User_Task.new
+      @user_task.id_task = (params[:task_id])
+      @user_task.id_user = (params[:user_id])
+      @user_task.title = (params[:task_title])
+      @user_task.limit_date = (params[:task_date])
+      @user_task.save
+      render 'user_tasks/new' 
+    else
+      @user_task = @user_task_tmp[0]
+      render 'user_tasks/new' 
+    end  
   end 
 
   post :update, :with => :id_user_task do
