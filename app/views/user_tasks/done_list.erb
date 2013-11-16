@@ -1,55 +1,80 @@
-<h1>Alumnos que cumplieron</h1>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Email</th>
-    </tr>
-    <% @users_accomplish.each do | user | %>
-        <tr>
-            <td>
-                <%= user.id %>
-            </td>
-            <td>
-                <%= user.name %>
-            </td>
-            <td>
-                <%= user.lastname%>
-            </td>
-            <td>
-                <%= user.email%>
-            </td>
-        
-        </tr>
-    <% end %>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Alumnos Que Cumplieron
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            <% @users_accomplish.each do | user | %>
+                <tr>
+                    <td>
+                        <%= user.id %>
+                    </td>
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.lastname%>
+                    </td>
+                    <td>
+                        <%= user.email%>
+                    </td>
+                
+                </tr>
+            <% end %>
 
-</table>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Alumnos Que No Cumplieron
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            <% @users_not_accomplish.each do | badusers | %>
+                <tr>
+                    <td>
+                        <%= badusers.id %>
+                    </td>
+                    <td>
+                        <%= badusers.name %>
+                    </td>
+                    <td>
+                        <%= badusers.lastname%>
+                    </td>
+                    <td>
+                        <%= badusers.email%>
+                    </td>
+                
+                </tr>
+            <% end %>
 
-<h1>Alumnos que NO cumplieron</h1>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Email</th>
-    </tr>
-    <% @users_not_accomplish.each do | badusers | %>
-        <tr>
-            <td>
-                <%= badusers.id %>
-            </td>
-            <td>
-                <%= badusers.name %>
-            </td>
-            <td>
-                <%= badusers.lastname%>
-            </td>
-            <td>
-                <%= badusers.email%>
-            </td>
-        
-        </tr>
-    <% end %>
-
-</table>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
