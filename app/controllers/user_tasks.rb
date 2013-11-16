@@ -54,6 +54,9 @@ TaskManagement::App.controllers :user_tasks do
   post :update, :with => :id_user_task do
     @user_task = User_Task.get(params[:id_user_task])
     @user_task.update(params[:user_task])
+    if(@user_task.real_time == '')
+      @user_task.real_time = 0
+    end
     if @user_task.save
       flash[:success] = 'Tarea guardada correctamente'
     else

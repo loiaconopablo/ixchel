@@ -24,4 +24,8 @@ class Task
     self.limit_date = Date.parse(str)
   end
 
+  def process
+    TaskManagement::App.deliver(:notification, :contact_info_email, self)
+  end
+
 end

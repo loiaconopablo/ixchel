@@ -23,8 +23,9 @@
                 <td>
                     <%= user.email%>
                 </td>
-                <td>
+                
                     <% if signed_in? %>
+                    <td>
                         <% if current_user.id == user.id || current_user.is_teacher %>
                             <%- form_tag url(:users, :tasks, :user_id => user.id), :method => :get do %>
                                 <!--

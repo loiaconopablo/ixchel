@@ -6,6 +6,7 @@
         <th>Fecha Limite</th>
         <th>Tiempo Estimado</th>
         <th>Tiempo Real</th>
+        <th>Balance</th>
     </tr>
     <% @user_tasks.each do | user_task | %>
         <tr>
@@ -18,12 +19,35 @@
             <td>
                 <%= user_task.limit_date%>
             </td>
-            <td>
-                <%= user_task.estimated_time%>
-            </td>
-            <td>
-                <%= user_task.real_time%>
-            </td>
+            <% if not (user_task.estimated_time == nil) %>
+                <td>
+                    <%= user_task.estimated_time%>
+                </td>
+            <% else %>
+                <td>
+                    ---
+                </td>
+            <% end %>
+            <% if not (user_task.real_time == 0) %>
+                <td>
+                    <%= user_task.real_time%>
+                </td>
+            <% else %>
+                    <td>
+                        <%- form_tag url(:user_tasks, :create, :user_id => user_task.id_user, :task_id => user_task.id_task), :method => :post do %>
+                            <button type='submit' title="Actualizar" rel='tooltip' class="btn btn-primary" >Registrar Tiempo Real</button>
+                    <% end %>
+                    </td>
+                <% end %>  
+            <% if not (user_task.real_time == 0) %>
+                <td>
+                    <%= user_task.estimated_time - user_task.real_time%>
+                </td>
+            <% else %>
+                <td>
+                    ---
+                </td>
+            <% end %>
         
         </tr>
     <% end %>
