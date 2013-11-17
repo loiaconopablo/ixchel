@@ -15,3 +15,4 @@ Scenario: Create a Task
 Scenario: See tasks
 	Given I am in Tasks page
 	Then I should see "Titulo"
+	And I should see "Fecha Limite"
