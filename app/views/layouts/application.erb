@@ -24,7 +24,7 @@
             <div class="container">
               <ul class="nav">
                 <li><%= link_to 'Inicio', url_for(:home, :index) %></li>
-                <li><%= link_to 'Alumnos', url_for(:users, :latest) %></li>
+                <li><%= link_to 'Listar Alumnos', url_for(:users, :latest) %></li>
                 
 								<% if signed_in? %>	
                   <%if current_user.is_teacher%>

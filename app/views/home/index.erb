@@ -1,7 +1,11 @@
 <div class="jumbotron">
   <h1>Tareas</h1>
-  <p class="lead">Bienvenido al sitio de Gestion de Tareas de  la materia Elementos de la Ingenieria de Software, para ver los alumnos registrados, dirigirse a  <a href="<%= url(:users, :latest) %>">Lista de alumnos</a>. Para registrar un alumno nuevo, debe iniciar sesion como Docente </p>
-  <a class="btn btn-large btn-success" href="<%= url(:users, :latest) %>" >Lista de alumnos</a>
+  <p class="lead">Bienvenido al sitio de Gestion de Tareas de  la materia Elementos de la Ingenieria de Software, para ver los alumnos registrados, dirigirse a  <a href="<%= url(:users, :latest) %>">Lista de alumnos</a>. </p>
+
+  <% if signed_in? == false %>
+  	<p class="lead"> Para ingresar al curso, favor de  <a href="<%= url(:users, :new) %>">Registrarse</a>. </p>
+  <% end %>
+
   <% if signed_in? %>
 	  <% if current_user.is_teacher %>
 	  	<a class="btn btn-large btn-success" href="<%= url(:users, :new) %>">Registrar alumno</a>
