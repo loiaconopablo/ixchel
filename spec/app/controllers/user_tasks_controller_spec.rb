@@ -19,15 +19,6 @@ describe "User_tasksController" do
 	  	get '/user_tasks/latest'
 	    last_response.should be_ok
 	  end
-	end
-
-	# describe 'get :tasks' do
-		
-	#   it "should response ok" do
-	#   	TaskManagement::App.any_instance.should_receive(:render).with('users/task_list')
-	#   	get '/users/tasks'
-	#     last_response.should be_ok
-	#   end
-	# end 		 	 
+	end	 	 
 	 
 end
