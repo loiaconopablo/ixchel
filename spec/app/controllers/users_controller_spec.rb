@@ -16,5 +16,23 @@ describe "UsersController" do
 	  end
 
 	 end
+
+	describe 'get :latest' do
+		
+	  it "should response ok" do
+	  	TaskManagement::App.any_instance.should_receive(:render).with('users/list')
+	  	get '/users/latest'
+	    last_response.should be_ok
+	  end
+	end
+
+	describe 'get :tasks' do
+		
+	  it "should response ok" do
+	  	TaskManagement::App.any_instance.should_receive(:render).with('users/task_list')
+	  	get '/users/tasks'
+	    last_response.should be_ok
+	  end
+	end 		 	 
 	 
 end
