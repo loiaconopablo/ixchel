@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite tests="46" failures="0" errors="0" time="3.859298" timestamp="2013-11-18T07:37:54+01:00">
+<testsuite tests="46" failures="0" errors="0" time="2.991880" timestamp="2013-11-18T19:27:58+01:00">
   <properties/>
-  <testcase classname="spec.app.controllers.home_controller_spec" name="HomeController default should return Comming soon!" time="2.049042"/>
-  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should response ok" time="0.064846"/>
-  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should render users/login" time="0.004567"/>
-  <testcase classname="spec.app.controllers.tasks_controller_spec" name="TasksController get :new should response ok" time="0.004158"/>
-  <testcase classname="spec.app.controllers.tasks_controller_spec" name="TasksController get :latest should response ok" time="0.004833"/>
-  <testcase classname="spec.app.controllers.user_tasks_controller_spec" name="User_tasksController get :new should response ok" time="0.004002"/>
-  <testcase classname="spec.app.controllers.user_tasks_controller_spec" name="User_tasksController get :latest should response ok" time="0.006037"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should response ok" time="0.003736"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should render users/new" time="0.003721"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :latest should response ok" time="0.004448"/>
-  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :tasks should response ok" time="0.006291"/>
-  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #id" time="0.009791"/>
-  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #title" time="0.000314"/>
-  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #estimated_time" time="0.000430"/>
-  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #real_time" time="0.000340"/>
-  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #limit_date" time="0.008427"/>
-  <testcase classname="spec.app.models.task_spec" name="Task All sets should return title = Tarea 1" time="0.023906"/>
-  <testcase classname="spec.app.models.task_spec" name="Task All sets should return estimated time = 30" time="0.000722"/>
-  <testcase classname="spec.app.models.task_spec" name="Task All sets should return real_time = 35" time="0.000691"/>
-  <testcase classname="spec.app.models.task_spec" name="Task All sets should return limit_date = 2011-12-13" time="0.022988"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #id" time="0.000338"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #name" time="0.000376"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #crypted_password" time="0.000334"/>
-  <testcase classname="spec.app.models.user_spec" name="User model should respond to #email" time="0.000295"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when name is blank" time="0.378095"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when lastname is blank" time="0.173093"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when email is not valid" time="0.164109"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when password is blank" time="0.001576"/>
-  <testcase classname="spec.app.models.user_spec" name="User valid? should be true when all field are valid" time="0.112822"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when password do not match" time="0.417103"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when email do not match" time="0.132406"/>
-  <testcase classname="spec.app.models.user_spec" name="User authenticate should return the user when email and password match" time="0.234374"/>
-  <testcase classname="spec.app.models.user_spec" name="User is_teacher? should return false" time="0.000483"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id" time="0.000408"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id_user" time="0.000314"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id_task" time="0.000278"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #title" time="0.000289"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #estimated_time" time="0.000286"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #real_time" time="0.000265"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #limit_date" time="0.000262"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return id_user = 1" time="0.000744"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return id_task = 1" time="0.000728"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return title = Tarea 1" time="0.000725"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return estimated time = 30" time="0.000693"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return real_time = 35" time="0.000720"/>
-  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return limit_date = 2011-12-13" time="0.000711"/>
+  <testcase classname="spec.app.controllers.home_controller_spec" name="HomeController default should return Comming soon!" time="1.516105"/>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should response ok" time="0.056799"/>
+  <testcase classname="spec.app.controllers.sessions_controller_spec" name="SessionsController get : should render users/login" time="0.003914"/>
+  <testcase classname="spec.app.controllers.tasks_controller_spec" name="TasksController get :new should response ok" time="0.003671"/>
+  <testcase classname="spec.app.controllers.tasks_controller_spec" name="TasksController get :latest should response ok" time="0.004284"/>
+  <testcase classname="spec.app.controllers.user_tasks_controller_spec" name="User_tasksController get :new should response ok" time="0.003174"/>
+  <testcase classname="spec.app.controllers.user_tasks_controller_spec" name="User_tasksController get :latest should response ok" time="0.006056"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should response ok" time="0.003328"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :register should render users/new" time="0.008439"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :latest should response ok" time="0.013835"/>
+  <testcase classname="spec.app.controllers.users_controller_spec" name="UsersController get :tasks should response ok" time="0.009763"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #id" time="0.018830"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #title" time="0.000234"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #estimated_time" time="0.000212"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #real_time" time="0.000320"/>
+  <testcase classname="spec.app.models.task_spec" name="Task model should respond to #limit_date" time="0.000386"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return title = Tarea 1" time="0.011049"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return estimated time = 30" time="0.000664"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return real_time = 35" time="0.000536"/>
+  <testcase classname="spec.app.models.task_spec" name="Task All sets should return limit_date = 2011-12-13" time="0.014184"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #id" time="0.000311"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #name" time="0.000212"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #crypted_password" time="0.000213"/>
+  <testcase classname="spec.app.models.user_spec" name="User model should respond to #email" time="0.000233"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when name is blank" time="0.230141"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when lastname is blank" time="0.109164"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when email is not valid" time="0.115087"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be false when password is blank" time="0.001075"/>
+  <testcase classname="spec.app.models.user_spec" name="User valid? should be true when all field are valid" time="0.107600"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when password do not match" time="0.214570"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return nil when email do not match" time="0.125906"/>
+  <testcase classname="spec.app.models.user_spec" name="User authenticate should return the user when email and password match" time="0.387321"/>
+  <testcase classname="spec.app.models.user_spec" name="User is_teacher? should return false" time="0.000396"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id" time="0.000329"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id_user" time="0.000235"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #id_task" time="0.000250"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #title" time="0.000222"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #estimated_time" time="0.000245"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #real_time" time="0.000301"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task model should respond to #limit_date" time="0.000211"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return id_user = 1" time="0.000681"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return id_task = 1" time="0.000636"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return title = Tarea 1" time="0.000615"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return estimated time = 30" time="0.000653"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return real_time = 35" time="0.000455"/>
+  <testcase classname="spec.app.models.user_task_spec" name="User_Task All sets should return limit_date = 2011-12-13" time="0.000696"/>
 </testsuite>

@@ -17,3 +17,16 @@ end
 Given(/^I am in Tasks page$/) do
   visit '/tasks/latest'
 end
+
+Given(/^there is a done task$/) do
+	visit '/tasks/new'
+  fill_in('task[title]', :with => 'Ejemplo de Titulo de Tarea')
+  fill_in('task[limit_date]', :with => '2011-12-13')
+end
+
+When(/^I push the button Tareas Realizadas$/) do
+  visit '/user_tasks/latest'
+end
+ 
+
+

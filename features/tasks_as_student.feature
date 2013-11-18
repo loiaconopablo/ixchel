@@ -13,6 +13,6 @@ Scenario: See tasks
 
 Scenario: See my done tasks
 	Given there is a done task
-	When I push the button "Tareas Realizadas"
+	When I push the button Tareas Realizadas
 	Then I should see "Titulo"
 	And I should see "Fecha Limite"

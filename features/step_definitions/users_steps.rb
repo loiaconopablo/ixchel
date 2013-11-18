@@ -1,10 +1,3 @@
-Given(/^I am signed in as teacher$/) do
-  visit '/login'
-  fill_in('user[email]', :with => 'npaez@gmail.com')
-  fill_in('user[password]', :with => '1234')
-  click_button('Iniciar sesion')
-end
-
 Given(/^I am in page Register student$/) do
   visit '/users/latest'
   click_button('Delete all')
@@ -55,5 +48,5 @@ Then(/^I should see all of the students registered in the course$/) do
 end
 
 When(/^I push the button "(.*?)"$/) do |arg1|
-  click_button(arg1)
+  click_button(arg1, match: :first)
 end

@@ -4,7 +4,7 @@ Feature: Students
 	I want to see a list of the students in this course
 
 Background:
-	Given I am signed in as teacher
+	Given I am a teacher
 
 Scenario: Register Student without fill fields
 	Given I am in page Register student
