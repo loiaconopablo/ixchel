@@ -31,10 +31,10 @@ user = User.create(:email => 'jlopez@gmail.com',
 									 :password => "1234")
 
 task = Task.create(:title => 'Tarea 1',
-					:limit_date => Date.new(2013, 07, 23))
+					:limit_date => Date.new(2013, 11, 01))
 
 task = Task.create(:title => 'Tarea 2',
-					:limit_date => Date.new(2013, 11, 25))
+					:limit_date => Date.new(2013, 11, 02))
 
 task = Task.create(:title => 'Tarea 3',
 					:limit_date => Date.new(2013, 12, 3))
