@@ -1,7 +1,7 @@
-Feature: Tasks
+Feature: Tasks 
 	In order to management all tasks
-	As a Teacher an Student
-	I want to create and see al tasks
+	As a Teacher
+	I want to create and see tasks
 
 Background:
 	Given I am a teacher
