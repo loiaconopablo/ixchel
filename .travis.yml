@@ -3,3 +3,8 @@ version: 1.9.3
 before_script:
   - "sh -e /etc/init.d/xvfb start"
 script: PADRINO_ENV=travis bundle exec rake
+
+deploy:
+  provider: heroku
+  app: ixchel
+  api_key: d9:47:6a:94:82:4a:e8:76:0d:ee:b1:b9:68:cf:fe:d4
