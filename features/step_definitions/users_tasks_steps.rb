@@ -1,15 +1,22 @@
-Given(/^I am a Student$/) do
+Given(/^I am registered in the course$/) do
+  @user = User.new
+  @user.email = 'rsaenz@gmail.com'
+  @user.name = 'Roberto'
+  @user.lastname = 'Saenz'
+  @user.password = '1234'
+  @user.save
+
   visit '/login'
   fill_in('user[email]', :with => 'rsaenz@gmail.com')
   fill_in('user[password]', :with => '1234')
   click_button('Iniciar sesion')
+  page.should have_content('rsaenz@gmail.com')
+
 end
 
 Given(/^there is a task "(.*?)"$/) do |arg1|
-  #task = Task.create(:title => 'Tarea 1',
- #         :limit_date => Date.new(2013, 11, 01))
   @task = Task.new
-  @task.title = 'Tarea 1'
+  @task.title = arg1
   @task.limit_date = '01-11-2013'
   @task.save
 end

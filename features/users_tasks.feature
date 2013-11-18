@@ -4,7 +4,7 @@ Feature: Register times
   I want to write my estimation and the real time I spent to do a task
 
 Background:
-  Given I am a Student
+  Given I am registered in the course
   And there is a task "Tarea 1"
   
 Scenario: Register with empty fields

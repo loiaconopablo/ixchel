@@ -40,7 +40,7 @@ Given(/^I am in page list of students$/) do
 end
 
 When(/^I push the button Eliminar$/) do
-  click_button('Delete')
+  click_button('Delete', match: :first)
 end
 
 
