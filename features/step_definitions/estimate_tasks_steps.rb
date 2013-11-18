@@ -1,4 +1,4 @@
-Given(/^I am registered in the course$/) do
+Given(/^I am a student$/) do
   @user = User.new
   @user.email = 'rsaenz@gmail.com'
   @user.name = 'Roberto'
