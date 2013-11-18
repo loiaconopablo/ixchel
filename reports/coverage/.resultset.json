@@ -155,7 +155,8 @@
         1,
         1,
         null,
-        null,
+        1,
+        1,
         null,
         null
       ],
@@ -563,22 +564,9 @@
         null,
         null,
         null
-      ],
-      "/home/mint/ixchel/app/mailers/notification.rb": [
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null
       ]
     },
-    "timestamp": 1384799282
+    "timestamp": 1384802625
   },
   "Cucumber Features": {
     "coverage": {
@@ -986,21 +974,8 @@
         null,
         null,
         null
-      ],
-      "/home/mint/ixchel/app/mailers/notification.rb": [
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null
       ]
     },
-    "timestamp": 1384799340
+    "timestamp": 1384802695
   }
 }

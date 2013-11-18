@@ -9,6 +9,7 @@ class User_Task
   property :real_time, Integer
   property :limit_date, Date
 
-  #validates_presence_of :estimated_time
-
+  validates_presence_of :title
+  validates_presence_of :limit_date
+  
 end
