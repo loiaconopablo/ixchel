@@ -3,8 +3,7 @@ version: 1.9.3
 bundler_args: --without development
 before_script:
   - "sh -e /etc/init.d/xvfb start"
-script: 
-   PADRINO_ENV=travis bundle exec padrino start
+script: PADRINO_ENV=travis bundle exec padrino start
 
 deploy:
   provider: heroku
@@ -13,3 +12,5 @@ deploy:
   app: ixchel
   on:
     repo: lrrinaudo/ixchel
+    branch: master
+    run: "rake db:migrate"
