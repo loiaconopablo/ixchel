@@ -2,7 +2,7 @@ language: ruby
 version: 1.9.3
 bundler_args: --without development
 before_script:
-- sh -e /etc/init.d/xvfb start
+  - "sh -e /etc/init.d/xvfb start"
 script: PADRINO_ENV=travis bundle exec rake
 
 deploy:
@@ -12,3 +12,4 @@ deploy:
   on:
     repo: lrrinaudo/ixchel
     branch: master
+    run: "rake db:migrate"
