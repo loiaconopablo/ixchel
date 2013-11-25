@@ -5,10 +5,9 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
 script: PADRINO_ENV=travis bundle exec padrino rake
 
-
 deploy:
   provider: heroku
-  api_key:e8b644d6-6619-4d67-8066-1b2b72803dd4
+  api_key: e8b644d6-6619-4d67-8066-1b2b72803dd4
   app: tareas
   on:
     repo: loiaconopablo/tareas
