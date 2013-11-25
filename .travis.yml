@@ -3,14 +3,14 @@ version: 1.9.3
 bundler_args: --without development
 before_script:
   - "sh -e /etc/init.d/xvfb start"
-script: PADRINO_ENV=travis bundle exec padrino start
+script: PADRINO_ENV=travis bundle exec padrino rake
+
 
 deploy:
   provider: heroku
-  api_key:
-    secure: YDjDiARMnUUl5/uUVmB4r21IXO1k2t8SqVQW2vcPp3eQZNqbapjCGFyCdPTU9WhQavmnI7q3EpY767e7psEIWWJDT4MfOvsieBW+jfub4gjbUkPBDVITWgGmQjPo+xcSU0390axATCiH/T9xVM5rfCggcejX/OS/W07z1U3j2+A=
-  app: ixchel
+  api_key:e8b644d6-6619-4d67-8066-1b2b72803dd4
+  app: tareas
   on:
-    repo: lrrinaudo/ixchel
+    repo: loiaconopablo/tareas
     branch: master
     run: "rake db:migrate"
