@@ -17,8 +17,4 @@ Scenario: See tasks
 	Then I should see "Titulo"
 	And I should see "Fecha Limite"
 
-Scenario: See done tasks
-	Given I am in Tasks page
-	When I push the button "Ver quien cumplio"
-	Then I should see "Alumnos Que Cumplieron"
-	And I should see "Alumnos Que No Cumplieron"
+
