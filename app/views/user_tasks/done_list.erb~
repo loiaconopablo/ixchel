@@ -1,0 +1,54 @@
+  <h1>Tareas</h1>
+
+    <table  class="table table-bordered" >
+            <tr> Tareas No cumplidas
+		
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Estado</th>
+            </tr>
+            <% @users_not_accomplish.each do | badusers | %>
+                <tr bgcolor= " #FF0015">
+
+
+                    <td>
+                        <%= badusers.name %>
+			<%= badusers.lastname%>
+                    </td>
+                    <td>
+                        <%= badusers.email%>
+                    </td>
+                    <td>
+                        No cumplió
+                    </td>
+                
+                </tr>
+            <% end %>
+
+            <% @users_accomplish.each do | user | %>
+                <tr bgcolor= "#32CD32">
+		
+                    <td> 
+                        <%= user.name %> 
+			<%= user.lastname%>
+                    </td>
+                    <td>
+                        <%= user.email%>
+                    </td>
+                    <td>
+                        Cumplió
+                    </td>
+                
+                </tr>
+            <% end %>
+
+        </table>
+
+        
+
+
+
+
+
+
+
