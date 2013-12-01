@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/mint/Desktop/tareas/app/app.rb": [
+      "/home/mint/tareas/app/app.rb": [
         1,
         1,
         1,
@@ -72,7 +72,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/models/task.rb": [
+      "/home/mint/tareas/app/models/task.rb": [
         1,
         1,
         1,
@@ -105,7 +105,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/models/user.rb": [
+      "/home/mint/tareas/app/models/user.rb": [
         1,
         1,
         null,
@@ -143,7 +143,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/models/user_task.rb": [
+      "/home/mint/tareas/app/models/user_task.rb": [
         1,
         1,
         null,
@@ -160,7 +160,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/home.rb": [
+      "/home/mint/tareas/app/controllers/home.rb": [
         1,
         null,
         1,
@@ -169,7 +169,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/sessions.rb": [
+      "/home/mint/tareas/app/controllers/sessions.rb": [
         1,
         null,
         1,
@@ -200,7 +200,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/tasks.rb": [
+      "/home/mint/tareas/app/controllers/tasks.rb": [
         1,
         null,
         null,
@@ -298,7 +298,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/user_tasks.rb": [
+      "/home/mint/tareas/app/controllers/user_tasks.rb": [
         1,
         null,
         null,
@@ -441,7 +441,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/users.rb": [
+      "/home/mint/tareas/app/controllers/users.rb": [
         1,
         null,
         null,
@@ -521,7 +521,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/home_helper.rb": [
+      "/home/mint/tareas/app/helpers/home_helper.rb": [
         null,
         null,
         1,
@@ -530,7 +530,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/sessions_helper.rb": [
+      "/home/mint/tareas/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
@@ -556,7 +556,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/users_helper.rb": [
+      "/home/mint/tareas/app/helpers/users_helper.rb": [
         null,
         null,
         1,
@@ -566,40 +566,40 @@
         null
       ]
     },
-    "timestamp": 1385398196
+    "timestamp": 1385761314
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/mint/Desktop/tareas/app/controllers/home.rb": [
+      "/home/mint/tareas/app/controllers/home.rb": [
         1,
         null,
         1,
-        29,
+        33,
         null,
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/sessions.rb": [
+      "/home/mint/tareas/app/controllers/sessions.rb": [
         1,
         null,
         1,
-        17,
-        17,
+        21,
+        21,
         null,
         null,
         1,
-        17,
-        17,
-        17,
-        17,
+        21,
+        21,
+        21,
+        21,
         0,
         0,
         0,
         null,
-        17,
-        17,
-        17,
-        17,
+        21,
+        21,
+        21,
+        21,
         null,
         null,
         null,
@@ -610,7 +610,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/tasks.rb": [
+      "/home/mint/tareas/app/controllers/tasks.rb": [
         1,
         null,
         null,
@@ -708,7 +708,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/user_tasks.rb": [
+      "/home/mint/tareas/app/controllers/user_tasks.rb": [
         1,
         null,
         null,
@@ -851,7 +851,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/controllers/users.rb": [
+      "/home/mint/tareas/app/controllers/users.rb": [
         1,
         null,
         null,
@@ -915,8 +915,8 @@
         1,
         5,
         5,
-        13,
-        8,
+        17,
+        12,
         null,
         null,
         5,
@@ -931,7 +931,7 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/home_helper.rb": [
+      "/home/mint/tareas/app/helpers/home_helper.rb": [
         null,
         null,
         1,
@@ -940,20 +940,20 @@
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/sessions_helper.rb": [
+      "/home/mint/tareas/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
-        17,
+        21,
         null,
         null,
         1,
-        508,
+        560,
         null,
         null,
         1,
-        17,
-        17,
+        21,
+        21,
         null,
         null,
         1,
@@ -961,12 +961,12 @@
         null,
         null,
         1,
-        233,
+        261,
         null,
         null,
         null
       ],
-      "/home/mint/Desktop/tareas/app/helpers/users_helper.rb": [
+      "/home/mint/tareas/app/helpers/users_helper.rb": [
         null,
         null,
         1,
@@ -976,6 +976,6 @@
         null
       ]
     },
-    "timestamp": 1385398205
+    "timestamp": 1385918921
   }
 }
