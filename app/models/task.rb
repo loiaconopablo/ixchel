@@ -19,12 +19,5 @@ class Task
     TaskManagement::App.deliver(:notification, :contact_info_email, self)
   end
 
-  # def How_many_beat?
-  #   @allTask = Task.all
-  #   @due_asks = []
-  #   @allTask.each do |task|
-  #     if(task.allTask  current_user.id)
-  #       @user_tasks.push(i)
-  #     end
 
 end

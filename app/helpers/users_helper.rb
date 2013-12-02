@@ -4,4 +4,10 @@ TaskManagement::App.helpers do
   # def simple_helper_method
   #  ...
   # end
+ 
+ def todosLosAlumnos
+ 	return User.find_all{|x| not x.is_teacher}
+ end
+
+
 end

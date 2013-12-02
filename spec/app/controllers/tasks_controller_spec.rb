@@ -36,13 +36,13 @@ describe "TasksController" do
 	describe 'get :global' do
 		
 	  it "should response ok" do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/global_state')
+	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/global')
 	  	get '/tasks/global'
 	    last_response.should be_ok
 	  end
 
 	  it 'should render tasks/list' do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/global_state')
+	  	TaskManagement::App.any_instance.should_receive(:render).with('tasks/global')
 	  	get 'tasks/global'
 	  end
 

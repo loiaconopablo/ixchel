@@ -1,3 +1,4 @@
+require 'date'
 TaskManagement::App.controllers :tasks do
   
   get :new do
@@ -11,8 +12,10 @@ TaskManagement::App.controllers :tasks do
   end 
 
   get :global do
-    @tasks = Task.all
-    render 'tasks/global_state'
+    @hoy = Date.today.to_s
+    @alumnos = todosLosAlumnos
+    @tareasVencidas = get_tareas_vencidas.count.to_s
+    render 'tasks/global'
   end 
 
   post :create do

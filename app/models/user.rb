@@ -34,4 +34,7 @@ class User
     ::BCrypt::Password.new(crypted_password) == password
   end
 
+
+
+
 end

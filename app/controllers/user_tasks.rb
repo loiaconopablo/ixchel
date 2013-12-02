@@ -29,7 +29,7 @@ TaskManagement::App.controllers :user_tasks do
 
   post :done do
     @user_tasks = UserTask.all
-    @users_temp = User.find_all{|x| not x.is_teacher}
+    @users_temp = todosLosAlumnos
     @users_accomplish = []
     @users_not_accomplish = []
     @user_tasks.each do |ut|
@@ -62,5 +62,6 @@ TaskManagement::App.controllers :user_tasks do
     end
   end
  
+  
 
 end
