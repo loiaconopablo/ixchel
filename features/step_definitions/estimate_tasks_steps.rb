@@ -23,27 +23,27 @@ end
 
 When(/^I do not fill any fields$/) do
   visit '/tasks/latest'
-  click_button('Registrar tiempos', match: :first)
+  click_link('Estimar', match: :first)
   click_button('Aceptar')
 end
 
 When(/^I only fill real time$/) do
   visit '/tasks/latest'
-  click_button('Registrar tiempos', match: :first)
+  click_link('Estimar', match: :first)
   fill_in('user_task[real_time]', :with => 20)
   click_button('Aceptar')
 end
 
 When(/^I only fill estimated time$/) do
   visit '/tasks/latest'
-  click_button('Registrar tiempos', match: :first)
+  click_link('Estimar', match: :first)
   fill_in('user_task[estimated_time]', :with => 21)
   click_button('Aceptar')
 end
 
 When(/^I fill estimated and real time$/) do
   visit '/tasks/latest'
-  click_button('Registrar tiempos', match: :first)
+  click_link('Estimar', match: :first)
   fill_in('user_task[estimated_time]', :with => 21)
   fill_in('user_task[real_time]', :with => 20)
   click_button('Aceptar')

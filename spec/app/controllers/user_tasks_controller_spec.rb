@@ -10,6 +10,11 @@ describe "User_tasksController" do
 	    last_response.should be_ok
 	  end
 
+	  it 'should render user_tasks/new' do
+	  	TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/new')
+	  	get '/user_tasks/new'
+	  end
+
 	end
 
 	describe 'get :latest' do
@@ -19,6 +24,13 @@ describe "User_tasksController" do
 	  	get '/user_tasks/latest'
 	    last_response.should be_ok
 	  end
+
+	  it 'should render user_tasks/list' do
+	  	TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/list')
+	  	get '/user_tasks/latest'
+	  end
+
+	  
 	end	 	 
 	 
 end

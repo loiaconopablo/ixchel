@@ -29,7 +29,7 @@
 								<% if signed_in? %>	
                   <%if current_user.is_teacher%>
                     <li><%= link_to 'Crear Tarea', url_for(:tasks, :new) %></li>
-                    
+                    <li><%= link_to 'Ver Estado Global', url_for(:tasks, :global) %></li>
                   <% end %>
                   <li><%= link_to 'Listar Tareas', url_for(:tasks, :latest) %></li>
                   <%if not current_user.is_teacher%>

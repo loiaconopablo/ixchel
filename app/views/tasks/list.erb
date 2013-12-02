@@ -23,9 +23,8 @@
                             <button type='submit' title="Alumnos" rel='tooltip' class="btn btn-primary" >Ver quien cumplio</button>
                     <% end %>
                 <% else%>
-                    <%- form_tag url(:user_tasks, :create, :user_id => current_user.id, :task_id => task.id, :task_title => task.title, :task_date => task.limit_date), :method => :post do %>
-                            <button type='submit' title="Estimar" rel='tooltip' class="btn btn-primary" >Registrar tiempos</button>
-                    <% end %>
+
+                    <%= link_to 'Estimar', url_for(:user_tasks, :new, :task_id => task.id), :class => "btn btn-primary" %>
                 
                 <% end %>
             </td>

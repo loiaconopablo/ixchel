@@ -18,11 +18,7 @@
                 <%= task.id%>
             </td>
             <td>
-                <%- form_tag url(:tasks, :user_tasks, :task_id => task.id), :method => :put do %>
-                     
-                    <button type='submit' title="Tareas" rel='tooltip' class="btn btn-primary" >Estimar</button>
-                
-                <% end %>
+               <%= link_to 'Estimar', url_for(:user_tasks, :new, :task_id => task.id), :class => "btn btn-primary" %>
             </td>
         
         </tr>

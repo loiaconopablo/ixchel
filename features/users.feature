@@ -29,10 +29,15 @@ Scenario: Register Student with valid information
 	And I push the button "Registrar"
 	Then I should see "Alumno registrado"
 
-Scenario: Delete student
+Scenario: Delete student login as Teacher
 	Given I am in page list of students
 	When I push the button Eliminar
-	Then I should see "Alumno eliminado"
+	#Then I should see "Alumno eliminado correctamente"
+
+Scenario: Can't delete student login as Student
+	Given I am a student
+	Given I am in page list of students
+	Then I should not see "Eliminar"
 
 Scenario: Delete all student
 	Given I am in page list of students

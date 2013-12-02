@@ -9,16 +9,16 @@ Background:
   
 Scenario: Register with empty fields
   When I do not fill any fields
-  Then I should see "El tiempo estimado es obligatorio"
+  Then I should see "Falta completar el campo estimado"
 
 Scenario: Register only time spent
   When I only fill real time
-  Then I should see "El tiempo estimado es obligatorio"
+  Then I should see "Falta completar el campo estimado"
 
 Scenario: Register only estimated time
   When I only fill estimated time
-  Then I should see "Tarea guardada correctamente"
+  Then I should see "Estimacion realizada"
 
 Scenario: Register times successfully
   When I fill estimated and real time
-  Then I should see "Tarea guardada correctamente"
+  Then I should see "Estimacion realizada"

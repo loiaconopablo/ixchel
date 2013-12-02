@@ -11,13 +11,13 @@
     <% @user_tasks.each do | user_task | %>
         <tr>
             <td>
-                <%= user_task.id_task %>
+                <%= user_task.task_id %>
             </td>
             <td>
-                <%= user_task.title %>
+                <%= user_task.task.title %>
             </td>
             <td>
-                <%= user_task.limit_date%>
+                <%= user_task.task.limit_date%>
             </td>
             <% if not (user_task.estimated_time == nil) %>
                 <td>
@@ -34,9 +34,7 @@
                 </td>
             <% else %>
                     <td>
-                        <%- form_tag url(:user_tasks, :create, :user_id => user_task.id_user, :task_id => user_task.id_task), :method => :post do %>
-                            <button type='submit' title="Actualizar" rel='tooltip' class="btn btn-primary" >Registrar Tiempo Real</button>
-                    <% end %>
+                    <%= link_to 'Registrar Tiempo Real', url_for(:user_tasks, :edit, :usertask_id => user_task.id), :class => "btn btn-primary" %>
                     </td>
                 <% end %>  
             <% if not (user_task.real_time == 0) %>

@@ -8,6 +8,7 @@ class User
   property :crypted_password, String
   property :email, String
   property :is_teacher, Boolean
+  has n, :user_tasks
 
   validates_presence_of :name
   validates_presence_of :lastname

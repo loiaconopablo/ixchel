@@ -1,23 +1,4 @@
 TaskManagement::App.controllers :users do
-  
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
-
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
 
   get :new, :map => '/register' do
     @user = User.new
@@ -48,17 +29,18 @@ TaskManagement::App.controllers :users do
       end
   end
 
-   delete :destroy do
+  delete :destroy do
      @user = User.get(params[:user_id])
      if @user.destroy
-       flash[:success] = 'Alumno eliminado'
+       flash[:success] = 'Alumno eliminado correctamente'
+       redirect '/users/latest'
      else
-       flash.now[:error] = 'Error elliminando alumno'
+       flash.now[:error] = 'Error eliminando al alumno'
+       redirect '/users/latest'
      end
-     redirect '/'
-   end  
+  end  
 
-   delete :destroyAll do
+  delete :destroyAll do
      @users = User.all
      @users.each do |i|
         if not i.is_teacher
@@ -67,12 +49,6 @@ TaskManagement::App.controllers :users do
      end
      flash[:success] = 'Todos los alumnos fueron eliminados'
      redirect '/'
-   end
-
-  get :tasks do
-    @user = User.get(params[:user_id])
-    @tasks = Task.all
-    render 'users/task_list'
-  end  
+  end
 
 end

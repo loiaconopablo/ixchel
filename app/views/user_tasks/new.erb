@@ -1,10 +1,10 @@
 <h1>Estimar Tarea</h1>
-<% form_for(@user_task, "/user_tasks/update/#{@user_task.id}") do |f| %> 
+<% form_for(@user_task, "/user_tasks/create") do |f| %> 
   Titulo:
   <br>
-  <%= @user_task.title %>
+  <%= @user_task.task.title %>
   <br>
-  <%= @user_task.limit_date %>
+  <%= @user_task.task.limit_date %>
   <br>
   Tiempo Estimado: (en minutos)
   <br>
@@ -15,4 +15,10 @@
   <%= f.text_field :real_time %>
   <br>
   <%= f.submit "Aceptar", :class => "btn btn-primary" %>
+  <%= link_to 'Cancel', url_for(:tasks, :latest), :class => "btn btn-secondary" %>
+
+  
+<input type="hidden" name="task_id" value="<%= @user_task.task.id %>" />
+<br>
+
 <% end %>

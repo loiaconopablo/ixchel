@@ -4,20 +4,11 @@ class Task
 
   property :id, Serial
   property :title, String
-  property :estimated_time, Integer
-  property :real_time, Integer
   property :limit_date, Date
+  has n, :user_tasks
 
   def set_title(t)
     self.titulo = t
-  end
-
-  def set_estimated_time(t)
-    self.estimated_time = t
-  end
-
-  def set_real_time(t)
-    self.real_time = t
   end
 
   def set_limit_date(str)
@@ -27,5 +18,13 @@ class Task
   def process
     TaskManagement::App.deliver(:notification, :contact_info_email, self)
   end
+
+  # def How_many_beat?
+  #   @allTask = Task.all
+  #   @due_asks = []
+  #   @allTask.each do |task|
+  #     if(task.allTask  current_user.id)
+  #       @user_tasks.push(i)
+  #     end
 
 end

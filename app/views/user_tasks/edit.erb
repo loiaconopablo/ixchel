@@ -1,0 +1,15 @@
+<h1>Completar tiempo real de la tarea:  <%=@user_task.task.title %>  </h1>
+<% form_for(@user_task, "/user_tasks/update/#{@user_task.id}") do |f| %> 
+ 
+  Tiempo estimado: (minutos)
+  <br>
+     <%=@user_task.estimated_time %>
+  <br>
+  Tiempo real: (minutos)
+  <br>
+  <%= f.text_field :real_time %>
+
+  <br>
+  <%= f.submit "Guardar", :class => "btn btn-primary" %>
+  <%= link_to 'Cancel', url_for(:user_tasks, :latest), :class => "btn btn-secondary" %>
+<% end %>
