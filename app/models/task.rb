@@ -7,6 +7,7 @@ class Task
   property :limit_date, Date
   has n, :user_tasks
 
+
   def set_title(t)
     self.titulo = t
   end
