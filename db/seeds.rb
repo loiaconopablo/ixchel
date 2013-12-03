@@ -47,3 +47,4 @@ task = Task.create(:title => 'Tarea 5',
 
 task = Task.create(:title => 'Tarea 6',
 					:limit_date => Date.new(2013, 11, 7))
+

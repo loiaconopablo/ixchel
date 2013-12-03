@@ -33,6 +33,19 @@ user = User.create(:email => 'rsaenz@gmail.com',
                    :is_teacher => false,
                    :password => "1234")
 
+task1 = Task.create(:title => 'Tarea 1',
+					:limit_date => Date.new(2013, 11, 01))
+					
+task2 = Task.create(:title => 'Tarea 2',
+					:limit_date => Date.new(2013, 11, 02))
+					
+task3 = Task.create(:title => 'Tarea 3',
+					:limit_date => Date.new(2013, 11, 03))
+					
+task4 = Task.create(:title => 'Tarea 4',
+					:limit_date => Date.new(2013, 11, 04))
+					                 
+
 #task = Task.create(:title => 'Tarea 1',
  #         :limit_date => Date.new(2013, 11, 01))
 
