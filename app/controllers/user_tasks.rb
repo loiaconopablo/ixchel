@@ -10,15 +10,14 @@ TaskManagement::App.controllers :user_tasks do
     @usertask = UserTask.new(params[:user_task])
     @usertask.user = current_user
     @usertask.task  = Task.get(params[:task_id])
-
     if @usertask.save
         flash[:success] = 'Estimacion realizada.'
         redirect '/user_tasks/latest'
     else
-      flash.now[:error] = 'Falta completar el campo estimado'
-      @user_task = UserTask.new
-      @user_task.task  = Task.get(params[:task_id])
-      render 'user_tasks/new'
+        flash.now[:error] = 'Falta completar el campo estimado'
+        @user_task = UserTask.new
+        @user_task.task  = Task.get(params[:task_id])
+        render 'user_tasks/new'
     end
   end
 
@@ -57,11 +56,9 @@ TaskManagement::App.controllers :user_tasks do
         flash[:success] = 'Tarea guardada correctamente'
         redirect '/user_tasks/latest'
     else
-      flash.now[:error] = 'Error al estimar la tarea'
-      redirect '/user_tasks/latest'
+        flash.now[:error] = 'Error al estimar la tarea'
+        redirect '/user_tasks/latest'
     end
   end
- 
-  
 
 end

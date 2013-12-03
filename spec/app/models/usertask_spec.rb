@@ -41,6 +41,32 @@ describe UserTask do
 
 	end
 
+	describe 'valid?' do
+
+	  let(:task) { UserTask.new }
+
+	  it 'should be false when estimated time is negative number' do
+	  	task.estimated_time = -1
+	  	task.valid?.should be_false
+	  end
+
+	  it 'should be false when estimated time are letters' do
+	  	task.estimated_time = 'hola'
+	  	task.valid?.should be_false
+	  end
+
+	  it 'should be false when real time is negative number' do
+	  	task.real_time = -1
+	  	task.valid?.should be_false
+	  end
+
+	  it 'should be false when real time are letters' do
+	  	task.real_time = 'hola'
+	  	task.valid?.should be_false
+	  end
+	  
+
+	end
 
 end
 
