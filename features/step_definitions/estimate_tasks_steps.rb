@@ -1,10 +1,5 @@
 Given(/^I am a student$/) do
-  # @user = User.new
-  # @user.email = 'rsaenz@gmail.com'
-  # @user.name = 'Roberto'
-  # @user.lastname = 'Saenz'
-  # @user.password = '1234'
-  # @user.save
+
   visit '/login'
   fill_in('user[email]', :with => 'rsaenz@gmail.com')
   fill_in('user[password]', :with => '1234')

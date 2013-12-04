@@ -1,7 +1,9 @@
 Feature: Ver estado global de los alumnos y tareas
 
+Scenario: See done tasks, with a student that not finished a task
+
 Given I login with Roberto, user default
-Then Roberto Complete all task
+#Then Roberto Complete all task
 Given I am a teacher
 When push the button Estado global de tareas
 Then I should see "Roberto"
