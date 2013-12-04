@@ -52,6 +52,6 @@ When(/^I push the button "(.*?)"$/) do |arg1|
 end
 
 When(/^I click the button "(.*?)"$/) do |button|
-  page.all(:button, button)[1].click
+  page.all(:button, button)[2].click
 end
 
