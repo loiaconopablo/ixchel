@@ -2,20 +2,22 @@ require 'spec_helper'
 
 describe "User_tasksController" do
 
-	describe 'get :new' do
+	# describe 'get :new' do
 		
-	  it "should response ok" do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/new')
-	  	get '/user_tasks/new'
-	    last_response.should be_ok
-	  end
+	# 	let(:task_id) { 1 }
+				
+	#   	it "should response ok" do
+	#   		TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/new')
+	#   		get '/user_tasks/new'
+	#     	last_response.should be_ok
+	#   	end
 
-	  it 'should render user_tasks/new' do
-	  	TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/new')
-	  	get '/user_tasks/new'
-	  end
+	#   	it 'should render user_tasks/new' do
+	#   		TaskManagement::App.any_instance.should_receive(:render).with('user_tasks/new')
+	#   		get '/user_tasks/new'
+	#   	end
 
-	end
+	# end
 
 	describe 'get :latest' do
 		

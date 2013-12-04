@@ -1,11 +1,16 @@
 TaskManagement::App.controllers :user_tasks do
   
-  get :new do
+   get :new do
     @user_task = UserTask.new
     @user_task.task  = Task.get(params[:task_id])
-    render 'user_tasks/new'
+    if not current_user.estimo? @user_task.task.id
+      render 'user_tasks/new'
+    else
+      flash[:error] = 'Ya realizaste la estamacion de ' + @user_task.task.title
+      redirect 'tasks/latest'
+    end
   end
-
+  
    post :create do
     @usertask = UserTask.new(params[:user_task])
     @usertask.user = current_user

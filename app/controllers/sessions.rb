@@ -15,6 +15,7 @@ TaskManagement::App.controllers :sessions do
       render 'sessions/new'
     else
       sign_in @user
+      flash[:success] = 'Login Correcto'
       redirect '/'          
     end
   end

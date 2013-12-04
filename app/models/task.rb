@@ -20,5 +20,12 @@ class Task
     TaskManagement::App.deliver(:notification, :contact_info_email, self)
   end
 
+  def estimo?(taskID)
+    if UserTask.count(:task_id => taskID, :user_id => self.id) > 0   
+      return true
+    else 
+      return false  
+    end
+  end
 
 end

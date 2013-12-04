@@ -6,6 +6,7 @@ Feature: Register times
 Background:
   Given I am a student
   And there is a task "Tarea 1"
+  And there is a task "Tarea 2"
   
 Scenario: Register with empty fields
   When I do not fill any fields

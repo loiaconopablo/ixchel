@@ -34,6 +34,13 @@ class User
     ::BCrypt::Password.new(crypted_password) == password
   end
 
+  def estimo?(taskID)
+    if UserTask.count(:task_id => taskID, :user_id => self.id) > 0   
+      return true
+    else 
+      return false  
+    end
+  end
 
 
 

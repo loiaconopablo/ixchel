@@ -5,7 +5,8 @@ Feature: Validación de errores
 
 Background:
   Given I am a student
-  And there is a task "Tarea 1"
+  And there is a task "Tarea 3"
+  And there is a task "Tarea 4"
 
 Scenario: Register estimated time with negative number or letters
   When I fill estimated time with negative number or letters
