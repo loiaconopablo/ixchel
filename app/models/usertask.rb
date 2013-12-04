@@ -9,7 +9,7 @@ class UserTask
 
   validates_presence_of :estimated_time
   validates_numericality_of :estimated_time, :only_integer => true, :greater_than => 0
-  validates_numericality_of :real_time, :only_integer => true, :greater_than_or_equal_to => 0
+  validates_numericality_of :real_time, :only_integer => true, :greater_than => 0
 
   def set_estimated_time (t)
       self.estimated_time = t
