@@ -50,3 +50,8 @@ end
 When(/^I push the button "(.*?)"$/) do |arg1|
   click_button(arg1, match: :first)
 end
+
+When(/^I click the button "(.*?)"$/) do |button|
+  page.all(:button, button)[1].click
+end
+

@@ -31,8 +31,8 @@ Scenario: Register Student with valid information
 
 Scenario: Delete student login as Teacher
 	Given I am in page list of students
-	When I push the button Eliminar
-	#Then I should see "Alumno eliminado correctamente"
+	When I click the button "Eliminar"
+	Then I should see "Alumno eliminado correctamente"
 
 Scenario: Can't delete student login as Student
 	Given I am a student

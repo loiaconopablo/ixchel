@@ -4,7 +4,7 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
-        <%if current_user.is_teacher%>
+        <%if signed_in? && current_user.is_teacher%>
                 <th>Acciones</th>
         <% end %>
 
@@ -24,7 +24,7 @@
                     <%= user.email%>
                 </td>
                 
-                    <%if current_user.is_teacher%>
+                    <%if signed_in? && current_user.is_teacher%>
                     <td>
                          <%- form_tag url(:users, :destroy, :user_id => user.id), :method => :delete do %>
                         <button type='submit' title="Delete" rel='tooltip' class="btn btn-secondary" >Eliminar</button>
