@@ -23,7 +23,7 @@ TaskManagement::App.helpers do
           result.push(elem)
         end
       end
-      return result
+      return result.count
     end
 
     def nuevaListaDetask
@@ -71,8 +71,8 @@ TaskManagement::App.helpers do
   end
 
   def tareas_realizadasQueVencieron(user)
-    @alltaskby = UserTask.all(:user => user)
-    @tareasVencidas = get_tareas_vencidas
+    @alltaskby = UserTask.all(:user => user).nuevaListaDetask
+    @tareasVencidas = get_tareas_vencidas.soloIdTask
     return  @alltaskby.conciden @tareasVencidas
   end
 

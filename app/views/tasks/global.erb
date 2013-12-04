@@ -1,12 +1,13 @@
-<h1>Vista Global al dia: <% @hoy %> </h1>
-<h3>Total de tareas que debio realizar: <%@tareasVencidas %>  </h3>
+<h1>Vista Global al dia: <%= @hoy %> </h1>
+<h3>Total de tareas que debio realizar: <%= @tareasVencidas %>  </h3>
 <table  class="table table-bordered" >
     <tr>
     
         <th>Nombre</th>
         <th>Email</th>
         <th>Estado General</th>
-        <th>Tareas Realizadas</th>
+        <th>Tareas Realizadas que vencieron</th>
+        <th>Tareas Realizadas en total </th>
     </tr>
     <% @alumnos.each do | alumno | %>
     <tr>
@@ -27,8 +28,13 @@
                 </td>
             <% end %>   
             <td>
-            <%= alumno.user_tasks.count %>   
+            <%= tareas_realizadasQueVencieron(alumno) %>   
             </td>
+            <td>
+            <%= UserTask.count(:user_id => alumno.id) %>   
+            </td>
+
+
 
     </tr>
     <% end %>
