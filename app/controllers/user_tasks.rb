@@ -3,10 +3,15 @@ TaskManagement::App.controllers :user_tasks do
    get :new do
     @user_task = UserTask.new
     @user_task.task  = Task.get(params[:task_id])
-    if not current_user.estimo? @user_task.task.id
-      render 'user_tasks/new'
+    if not @user_task.task.vencio?
+      if not current_user.estimo? @user_task.task.id
+        render 'user_tasks/new'
+      else
+        flash[:error] = 'Ya realizaste la estamacion de ' + @user_task.task.title
+        redirect 'tasks/latest'
+      end
     else
-      flash[:error] = 'Ya realizaste la estamacion de ' + @user_task.task.title
+      flash[:error] = 'La tarea ' + @user_task.task.title + " ya vencio y no se puede estimar."
       redirect 'tasks/latest'
     end
   end

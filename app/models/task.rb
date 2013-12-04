@@ -28,4 +28,12 @@ class Task
     end
   end
 
+  def vencio?
+    if self.limit_date < Date.today
+      return true
+    else
+      return false
+    end
+  end
+
 end

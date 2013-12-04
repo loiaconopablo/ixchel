@@ -10,6 +10,12 @@ fill_in('user[email]', :with => 'user2@tareas.com')
 fill_in('user[password]', :with => '1234')
 click_button('Iniciar sesion')									 
 
+@task2 = Task.get(2)
+@task2.update(:limit_date => Date.new(2013, 12, 30))
+
+@task1 = Task.get(1)
+@task1.update(:limit_date => Date.new(2013, 12, 30))
+
 visit '/tasks/latest'
 page.all(:link, 'Estimar')[0].click
 fill_in('user_task[estimated_time]', :with => 20)

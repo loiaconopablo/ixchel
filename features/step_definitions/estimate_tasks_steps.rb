@@ -11,7 +11,7 @@ end
 Given(/^there is a task "(.*?)"$/) do |arg1|
   @task = Task.new
   @task.title = arg1
-  @task.limit_date = '01-11-2013'
+  @task.limit_date = '01-10-2014'
   @task.save
 end
 
