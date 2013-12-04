@@ -15,8 +15,6 @@ TaskManagement::App.controllers :sessions do
       render 'sessions/new'
     else
       sign_in @user
-      print @user.email
-      print @user.name
       redirect '/'          
     end
   end

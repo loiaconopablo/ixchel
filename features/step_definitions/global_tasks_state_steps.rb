@@ -1,36 +1,37 @@
 Given(/^I have a student with name "(.*?)" and last name "(.*?)" that has not finished a task$/) do |nombre, apellido|
-user1 = User.create(:email => 'test@tareas.com',
+user1 = User.create(:email => 'user1@tareas.com',
 									 :name => nombre, 
 									 :lastname => apellido,
 									 :is_teacher => false,
-									 :password => "1234")
-					
-user_task1 = UserTask.create(	:user => user1,
-															:task => task1,
-															:estimated_time => 20)				
+									 :password => "1234") 
+visit '/login'
+fill_in('user[email]', :with => 'user1@tareas.com')
+fill_in('user[password]', :with => '1234')
+click_button('Iniciar sesion')
+ 							 
+visit '/tasks/latest'
+click_link('Estimar', match: :first)
+fill_in('user_task[estimated_time]', :with => 20)
+click_button('Aceptar')	
                            
 end
 
 Given(/^I have a student with name "(.*?)" and last name "(.*?)" that has finished all task$/) do |nombre, apellido|
-user2 = User.create(:email => 'test@tareas.com',
+user2 = User.create(:email => 'user1@tareas.com',
 									 :name => nombre, 
 									 :lastname => apellido,
 									 :is_teacher => false,
 									 :password => "1234")
+visit '/login'
+fill_in('user[email]', :with => 'user2@tareas.com')
+fill_in('user[password]', :with => '1234')
+click_button('Iniciar sesion')	
 
-task3 = Task.create(:title => 'Tarea 3',
-					:limit_date => Date.new(2013, 11, 03))
-					
-task4 = Task.create(:title => 'Tarea 4',
-					:limit_date => Date.new(2013, 11, 04))
-					
-user_task1 = UserTask.create( :user => user2,
-															:task => task3,
-															:estimated_time => 20)
-															
-user_task1 = UserTask.create( :user => user2,
-															:task => task4,
-															:estimated_time => 20)		
+visit '/tasks/latest'
+click_link('Estimar', match: :first)
+fill_in('user_task[estimated_time]', :with => 20)
+click_button('Aceptar')									 			 
+
 end
 
 When(/^push the button Estado global de tareas$/) do
@@ -39,6 +40,6 @@ When(/^push the button Estado global de tareas$/) do
 end
 
 Given(/^"(.*?)" complete a task before the limit date$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+ @tarea = Task.get(2)
 end
 
