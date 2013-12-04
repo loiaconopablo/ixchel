@@ -17,7 +17,7 @@ Scenario: Register only time spent
 
 Scenario: Register only estimated time
   When I only fill estimated time
-#  Then I should see "Estimacion realizada"
+  Then I should see "Estimacion realizada"
 
 Scenario: Register times successfully
   When I fill estimated and real time
