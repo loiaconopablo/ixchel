@@ -15,10 +15,3 @@ Scenario: Register only time spent
   When I only fill real time
   Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
 
-Scenario: Register only estimated time
-  When I only fill estimated time
-  Then I should see "Estimacion realizada"
-
-Scenario: Register times successfully
-  When I fill estimated and real time
-  Then I should see "Estimacion realizada"

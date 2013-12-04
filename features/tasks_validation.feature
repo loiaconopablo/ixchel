@@ -8,9 +8,9 @@ Background:
   And there is a task "Tarea 1"
 
 Scenario: Register estimated time with negative number or letters
-  When I fill estimated time with negative number
+  When I fill estimated time with negative number or letters
   Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
 
 Scenario: Register real time with negative number or letters
-  When I fill real time with negative number
+  When I fill real time with negative number or letters
   Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
