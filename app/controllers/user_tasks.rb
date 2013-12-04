@@ -14,7 +14,7 @@ TaskManagement::App.controllers :user_tasks do
         flash[:success] = 'Estimacion realizada.'
         redirect '/user_tasks/latest'
     else
-        flash.now[:error] = 'Falta completar el campo estimado'
+        flash.now[:error] = 'Campo llenado incorrectamente: debe contener numero positivo'
         @user_task = UserTask.new
         @user_task.task  = Task.get(params[:task_id])
         render 'user_tasks/new'
@@ -56,7 +56,7 @@ TaskManagement::App.controllers :user_tasks do
         flash[:success] = 'Tarea guardada correctamente'
         redirect '/user_tasks/latest'
     else
-        flash.now[:error] = 'Error al estimar la tarea'
+        flash[:error] = 'Campo llenado incorrectamente: debe contener numero positivo'
         redirect '/user_tasks/latest'
     end
   end

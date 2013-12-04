@@ -7,18 +7,10 @@ Background:
   Given I am a student
   And there is a task "Tarea 1"
 
-Scenario: Register estimated time with negative number
-  When I fill estimated time with negative number
-  Then I should see "El tiempo estimado no deber ser negativo"
+Scenario: Register estimated time with negative number or letters
+  When I fill estimated time with negative number or letters
+  Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
 
-Scenario: Register real time with negative number
-  When I fill real time with negative number
-  Then I should see "El tiempo real no deber ser negativo"
-
-Scenario: Register estimated time with letters
-  When I fill estimated time with letters
-  Then I should see "El tiempo estimado deben ser digitos"
-
-Scenario: Register real time with letters
-  When I fill real time with letters
-  Then I should see "El tiempo real deben ser digitos"
+Scenario: Register real time with negative number or letters
+  When I fill real time with negative number or letters
+  Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
