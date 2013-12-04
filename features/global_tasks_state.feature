@@ -11,7 +11,7 @@ Given I am a teacher
 When push the button Estado global de tareas
 Then I should see "Adrian"
 And I should see "Paenza"
-Then I should see "Le quedaron tareas sin estimar"
+Then I should see 'Le quedaron tareas sin estimar'
 
 Scenario: See done tasks, with a student that finished all task
 
@@ -23,7 +23,7 @@ Then I should see "Estimo todas las tareas vencidas"
 
 Scenario: See done tasks, with all student that finished all task
 
-Given "Adrian" complete a task before the limit date
+Given Adrian complete a task before the limit date
 Given I am a teacher
 When push the button Estado global de tareas
 Then I should see "Adrian"

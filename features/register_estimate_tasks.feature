@@ -9,15 +9,15 @@ Background:
   
 Scenario: Register with empty fields
   When I do not fill any fields
-  Then I should see "Falta completar el campo estimado"
+  Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
 
 Scenario: Register only time spent
   When I only fill real time
-  Then I should see "Falta completar el campo estimado"
+  Then I should see "Campo llenado incorrectamente: debe contener numero positivo"
 
 Scenario: Register only estimated time
   When I only fill estimated time
-  Then I should see "Estimacion realizada"
+#  Then I should see "Estimacion realizada"
 
 Scenario: Register times successfully
   When I fill estimated and real time
